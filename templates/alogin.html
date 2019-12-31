@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="w3-bar w3-black" style = "text-align:right;">
+        <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-mobile w3-right">Log Out</a>
+        <a href = "{{url_for('adminofficelog')}}" class="w3-bar-item w3-button w3-mobile">Officer's Activity Log</a>
+        <a href = "{{url_for('adminpendingrequests',emailidd = emailid)}}" class="w3-bar-item w3-button w3-mobile">Pending Requests
+        <a href = "{{url_for('createnew')}}" class="w3-bar-item w3-button w3-mobile">Register New User</a>
+
+    </div>
+    <div class="w3-card-4" style = "text-align:center; margin-top:80px; margin-left:40px; margin-right:40px;">
+
+        <header class="w3-container w3-blue">
+          <h1>User details:-</h1>
+        </header>
+
+        <div class="w3-container w3-light-blue" style="text-align:center;">
+        <table>
+          <tr>
+            <th style = "column-width:250px;"><b>Email Id</b></th>
+            <th style = "column-width:250px;"><b>Name</b></th>
+            <th style = "column-width:250px;"><b>Department</b></th>
+            <th style = "column-width:250px;"><b>Post</b></th>
+            <th style = "column-width:250px;"><b>Date</b></th>
+            </tr>
+        </table>
+        </div>
+        <table>
+        <footer class="w3-container" style="text-align:center;">
+          <tr>
+            <th style = "column-width:250px;"><i>{{emailid}}</i></th>
+            <th style = "column-width:250px;"><i>{{name}}</i></th>
+            <th style = "column-width:250px;"><i>{{dep}}</i></th>
+            <th style = "column-width:250px;"><i>{{post}}</i></th>
+            <th style = "column-width:250px;"><i>{{date}}</i></th>
+        </tr>
+        </table>
+        </footer>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+{%endblock%}

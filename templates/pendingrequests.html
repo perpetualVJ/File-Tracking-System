@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="w3-bar w3-black" style = "text-align:right;">
+        <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-mobile w3-right">Log Out</a>
+        <a href = "{{url_for('createfile')}}" class="w3-bar-item w3-button w3-mobile">Create File</a>
+        <a href = "{{url_for('upload')}}" class="w3-bar-item w3-button w3-mobile">File's Log</a>
+        <a href = "{{url_for('officelog')}}" class="w3-bar-item w3-button w3-mobile">Officer's Activity Log</a>
+        <a href = "{{url_for('pendingrequests')}}" class="w3-bar-item w3-button w3-mobile">Pending Requests</a>
+    </div>
+    <br>
+    <div align = "center">
+        <p align = "center"><strong><h2>Officer Pending Requests</h2></strong></p>
+    </div>
+    <table class="table" style="width:100%">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col" >File No.</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Body</th>
+        <th scope="col">Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Remarks</th>
+        <th scope="col">Submit</th>
+    </tr>
+  </thead>
+  <tbody>
+       {% for i in  range (0,fetchdata|length) %}
+                    <tr>
+                        <th>{{fetchdata[i][0]}}</th>
+                        <th>{{fetchdata[i][2]}}</th>
+                        <th>{{fetchdata[i][1]}}</th>
+                        <th>{{fetchdata[i][3]}}</th>
+                        <form method = "POST" action = "{{url_for('uietsubmit',file = fetchdata[i][0])}}">
+                            <th><select name="status">
+                              <option value="Accepted">Accepted</option>
+                              <option value="Rejected">Rejected</option>
+                                </select></th>
+                            <th><input name = "remarks" type = "text" required></th>
+                            <th><input type = "Submit" required></th>
+                        </form>
+
+                    </tr>
+         {% endfor %}
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+     <div class="w3-bar w3-black" style = "text-align:right;">
+        <a href="{{url_for('createfile')}}" class="w3-bar-item w3-button w3-mobile">Create File</a>
+        <a href="{{url_for('upload')}}" class="w3-bar-item w3-button w3-mobile">Activity Log</a>
+        <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-mobile w3-right">Log Out</a>
+    </div>
+    <br>
+    <br>
+    <div align = "center">
+        <p align = "center"><strong><h2>Pending Files Status</h2></strong></p>
+    </div>
+    <table class="table" style="width:105%">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col" >File No.</th>
+        <th scope="col">Date of Creation</th>
+        <th scope="col">Uiet Office Status</th>
+        <th scope="col">Uiet Office Remarks</th>
+        <th scope="col">Admin Office Status</th>
+        <th scope="col">Admin Office Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+       {% for i in  range (0,fetchdata|length) %}
+                    <tr>
+                        <th>{{fetchdata[i][0]}}</th>
+                        <th>{{fetchdata[i][1]}}</th>
+                        <th>{{fetchdata[i][2]}}</th>
+                        <th>{{fetchdata[i][3]}}</th>
+                        <th>{{fetchdata[i][4]}}</th>
+                        <th>{{fetchdata[i][5]}}</th>
+                    </tr>
+         {% endfor %}
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <div class="w3-card-4" style = "text-align:center; margin-top:40px; margin-left:40px; margin-right:40px;">
+
+        <header class="w3-container w3-blue">
+          <h1>File Status</h1>
+        </header>
+    <div class="w3-container w3-light-blue" style="text-align:center;">
+            <table>
+                <tr>
+                    <th style = "column-width:250px">File No.</th>
+                    <th style = "column-width:250px">Submitted on(MM/DD/YY)</th>
+                    <th style = "column-width:250px">Uiet Office Status</th>
+                    <th style = "column-width:250px">Uiet Office Remarks</th>
+                    <th style = "column-width:250px">Admin Office Status</th>
+                    <th style = "column-width:250px">Admin Office Remarks</th>
+                </tr>
+            </table>
+    </div>
+            <table>
+            <footer class="w3-container w3-pale-blue" style="text-align:center;">
+                <tr>
+                    <th style = "column-width:250px"><h3>{{fileno}}</h3></th>
+                    <th style = "column-width:250px"><h3>{{submit}}</h3></th>
+                    <th style = "column-width:250vpx"><h3>{{uietstatus}}</h3></th>
+                    <th style = "column-width:250px"><h3>{{uietremarks}}</h3></th>
+                    <th style = "column-width:250px"><h3>{{adminstatus}}</h3></th>
+                    <th style = "column-width:250px"><h3>{{adminremarks}}</h3></th>
+                </tr>
+            </table>
+             </footer>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{%endblock%}

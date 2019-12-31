@@ -1,0 +1,25 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+    <br>
+    <br>
+    <div class="w3-container w3-teal" style = "margin-left:500px; margin-right:500px; text-align:center;">
+      <h3><p style="text-align:center;">Login As EMPLOYEE.</p></h3>
+    </div>
+    <br>
+    <br>
+    <div class="w3-container" style = "margin-left:500px; margin-right:500px; text-align:center;">
+    <form method = "POST" action = "/emplogin">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" name = "email" class="w3-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+        <br>
+        <br>
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" name = "password" class="w3-input" id="exampleInputPassword1" placeholder="Password" required>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    <br>
+{%endblock%}

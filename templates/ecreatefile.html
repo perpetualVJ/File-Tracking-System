@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="w3-bar w3-black" style = "text-align:right;">
+        <a href="{{url_for('createfile')}}" class="w3-bar-item w3-button w3-mobile">Create File</a>
+        <a href="{{url_for('upload')}}" class="w3-bar-item w3-button w3-mobile">Activity Log</a>
+        <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-mobile w3-right">Log Out</a>
+    </div>
+    <br>
+    <div class="w3-card-4" style = "text-align:center; margin-top:40px; margin-left:40px; margin-right:40px;">
+
+        <header class="w3-container w3-blue">
+          <h1>User details:-</h1>
+        </header>
+
+        <div class="w3-container w3-light-blue" style="text-align:center;">
+        <table>
+          <tr>
+            <th style = "column-width:250px;"><b>Email Id</b></th>
+            </tr>
+        </table>
+        </div>
+        <table>
+        <footer class="w3-container" style="text-align:center;">
+          <tr>
+            <th style = "column-width:250px;"><i>{{emailid}}</i></th>
+        </tr>
+        </table>
+        </footer>
+        </div>
+        <br>
+        <br>
+        <br>
+    <div class="w3-container w3-purple" style = "text-align:center; margin-left:60px; margin-right:60px;">
+          <h2>File Details:-</h2>
+        </div>
+        <div class="w3-container" style = "text-align:center; margin-left:60px; margin-right:60px;">
+        <form method = "POST" action = "{{url_for('submit',email=emailid)}}">
+            <label>Subject:-</label>
+            <textarea name = "subject" rows = "1" cols = "100" class="w3-input w3-border" required></textarea>
+            <br>
+            <label>Body:-</label>
+            <textarea name = "body" rows = "25" cols = "100"  class="w3-input w3-border" required></textarea>
+            <br>
+            <input type="submit" class="w3-btn w3-purple">
+        </form>
+        </div>
+        <br>
+        <br>
+{%endblock%}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="w3-bar w3-black" style = "text-align:right;">
+        <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-mobile w3-right">Log Out</a>
+        <a href = "{{url_for('createfile')}}" class="w3-bar-item w3-button w3-mobile">Create File</a>
+        <a href = "{{url_for('upload')}}" class="w3-bar-item w3-button w3-mobile">File's Log</a>
+        <a href = "{{url_for('officelog')}}" class="w3-bar-item w3-button w3-mobile">Officer's Activity Log</a>
+        <a href = "{{url_for('pendingrequests')}}" class="w3-bar-item w3-button w3-mobile">Pending Requests</a>
+    </div>
+    <br>
+
+    <div align = "center">
+        <h1><strong><b>Officer File Statistics</b></strong></h1>
+    </div>
+    <br>
+    <br>
+    <br>
+     <div class="row">
+  <div align = "center" class="column" style="background-color:#aaa;">
+    <h1>{{today}}</h1>
+    <p><h2>Today's File Log</h2></p>
+  </div>
+  <div align = "center" class="column" style="background-color:#bbb;">
+    <h1>{{month}}</h1>
+    <p><h2>Monthly Log</h2></p>
+  </div>
+</div>
+
+<div class="row">
+  <div align = "center" class="column" style="background-color:#ccc;">
+    <h1>{{year}}</h1>
+    <p><h2>Yearly Log</h2></p>
+  </div>
+  <div align = "center" class="column" style="background-color:#ddd;">
+    <h1>{{pending}}</h1>
+    <p><h2>Pending Files</h2></p>
+  </div>
+</div>
+
+<div class="row">
+  <div align = "center"class="column" style="background-color:#eee;">
+    <h1>{{accepted}}</h1>
+    <p><h2>Accepted Files</h2></p>
+  </div>
+  <div align = "center" class="column" style="background-color:#fff;">
+    <h1>{{rejected}}</h1>
+    <p><h2>Rejected Files</h2></p>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+{%endblock%}

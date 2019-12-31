@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="static/styles.css"
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>File Tracking System</title>
+                                     <!-- logo & name -->
+    <div class="w3-container w3-teal" style = "text-align:center;padding:10px">
+          <h1 class="w3-jumbo"><p class = "w3-myfont">File Tracking System</p></h1>
+    </div>
+    <div class="w3-container w3-green" style = "text-align:center; padding:10px;">
+        <font size="5"><a href= "{{ url_for('home') }}" class="w3-bar-item w3-button w3-mobile">Home</a></font>
+        <font size="5"><a href= "{{ url_for('status') }}" class="w3-bar-item w3-button w3-mobile">Status</a></font>
+        <font size="5"><a href="{{ url_for('employee') }}" class="w3-bar-item w3-button w3-mobile">Employee</a></font>
+        <font size="5"><a href="{{ url_for('uietoffice') }}" class="w3-bar-item w3-button w3-mobile">Office</a></font>
+        <font size="5"><a href="{{ url_for('admin') }}" class="w3-bar-item w3-button w3-mobile">Admin</a></font>
+        <font size="5"><a href="{{ url_for('contactus') }}"  class="w3-bar-item w3-button w3-mobile">Contact Us</a></font>
+    </div>
+</head>
+<body>
+    <header>
+        {% block body %} {% endblock%}
+    </header>
+
+    <footer>
+    <div class="w3-container w3-teal" style = "text-align:center;">
+          <h5><p class = "w3-myfont">Copyrights reserved.</p></h5>
+    </div>
+    </footer>
+</body>
+</html>

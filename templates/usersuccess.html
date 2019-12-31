@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="w3-bar w3-black" style = "text-align:right;">
+        <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-mobile w3-right">Log Out</a>
+        <a href = "{{url_for('adminofficelog')}}" class="w3-bar-item w3-button w3-mobile">Admin's Activity Log</a>
+        <a href = "{{url_for('adminpendingrequests')}}" class="w3-bar-item w3-button w3-mobile">Pending Requests</a>
+        <a href = "{{url_for('createnew')}}" class="w3-bar-item w3-button w3-mobile">Register New User</a>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div align = "center">
+        <p><h1><strong><b>User Registration Successful.</b></strong></h1></p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+{%endblock%}

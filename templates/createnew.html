@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="w3-bar w3-black" style = "text-align:right;">
+        <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-mobile w3-right">Log Out</a>
+        <a href = "{{url_for('adminofficelog')}}" class="w3-bar-item w3-button w3-mobile">Officer's Activity Log</a>
+        <a href = "{{url_for('adminpendingrequests')}}" class="w3-bar-item w3-button w3-mobile">Pending Requests
+        <a href = "{{url_for('createnew')}}" class="w3-bar-item w3-button w3-mobile">Register New User</a>
+
+    </div>
+    <div align = "center">
+        <h1><b><strong></strong>Register New Employee</strong></b></h1>
+    </div>
+    <br>
+    <br>
+   <form method = "POST" action = "/newuser" class="needs-validation" novalidate>
+  <div class="form-row" style = "margin-left:50px; margin-right:50px;">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">Name of Employee</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="Name of Employee" name = "name" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Email ID</label>
+      <input type="email" class="form-control" id="validationCustom02" placeholder="Email ID" name = "email" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Password</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Password" name = "password" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+  </div>
+  <div class="form-row" style = "margin-left:50px; margin-right:50px;">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">Department</label>
+      <input type="text" class="form-control" id="validationCustom03" placeholder="Department" name = "department" required>
+      <div class="invalid-feedback">
+        Please provide Department Name.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">Post</label>
+      <input type="text" class="form-control" id="validationCustom05" placeholder="Post" name = "post"  value="employee" required>
+      <div class="invalid-feedback">
+        Please provide a Post.
+      </div>
+    </div>
+  </div>
+  <br>
+  <div style = "margin-left:60px; margin-right:50px;">
+    <button class="btn btn-primary" type="submit" >Register</button>
+  </div>
+
+</form>
+<br>
+<br>
+  <script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+
+{%endblock%}
